@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-let propTypes={
+let propTypes={ //数据验证
     leftCount:PT.number,
     onClearCompleted:PT.func,
     showButton:PT.bool,
@@ -21,9 +21,10 @@ export default class Footer extends Component {
 
         let clearBt=null;
 
-        if(showButton){
+        if(showButton){  
              clearBt=(<button className="clear-completed" 
-            onClick={onClearCompleted}>
+            onClick={onClearCompleted}  //清除事件
+            > 
             清除完成项目
             </button>)
         }
@@ -36,8 +37,8 @@ export default class Footer extends Component {
                </span>
                <ul className="filters">
                  <li>
-                        <Link
-                        to="/"
+                        <Link  
+                        to="/"   
                         className={pathname==='/'?'selected':''}
                         >所有</Link>
                      {/* <a 
